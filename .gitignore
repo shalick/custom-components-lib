@@ -1,0 +1,46 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+
+# Build outputs
+dist/
+build/
+storybook-static/
+
+# Storybook cache
+.cache/
+.out/
+*.sb-cache/
+
+# Logs
+logs/
+*.log
+
+# VSCode settings
+.vscode/
+
+# IDEs
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+.env
+.env.local
+.env.*.local
+coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional: If using jest
+jest-test-results.json
+coverage/
