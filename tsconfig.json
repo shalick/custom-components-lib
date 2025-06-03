@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "target": "ES2020",
+    "lib": ["DOM", "DOM.Iterable", "ES2020"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build", ".storybook"]
+}
