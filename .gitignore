@@ -44,3 +44,5 @@ coverage/
 # Optional: If using jest
 jest-test-results.json
 coverage/
+
+*storybook.log
