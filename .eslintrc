@@ -1,0 +1,48 @@
+{
+  "extends": [
+    "airbnb",
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+  ],
+  "plugins": ["prettier", "react", "@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+    },
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": ".",
+    "sourceType": "module",
+  },
+  "rules": {
+    "prettier/prettier": ["error"],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+    "no-console": "warn",
+    "import/prefer-default-export": "off",
+    "react/button-has-type": "warn",
+  },
+  "settings": {
+    "react": {
+      "version": "detect",
+    },
+  },
+  "overrides": [
+    {
+      "files": ["webpack.config.ts"],
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true,
+          },
+        ],
+      },
+      "parserOptions": {
+        "project": null,
+      },
+    },
+  ],
+}

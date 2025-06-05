@@ -13,6 +13,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"]
@@ -22,7 +24,8 @@
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
+      "noEmit": true
     }
   },
   "include": ["src", "src/types"],
