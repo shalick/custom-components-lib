@@ -1,0 +1,81 @@
+{
+  "name": "custom-components-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack server",
+    "build:dev": "webpack --env mode=development",
+    "build:prod": "webpack --env mode=production",
+    "css:watch": "tcm src --extensions scss --watch",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "lint:fix": "eslint --fix --ext .ts,.tsx .",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/eslint-parser": "^7.27.5",
+    "@babel/plugin-transform-react-jsx-development": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "@storybook/addon-docs": "^9.0.5",
+    "@storybook/addon-onboarding": "^9.0.5",
+    "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
+    "@storybook/react-webpack5": "^9.0.5",
+    "@types/node": "^22.15.29",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "@types/webpack": "^5.28.5",
+    "@types/webpack-dev-server": "^4.7.1",
+    "@typescript-eslint/eslint-plugin": "^8.33.1",
+    "@typescript-eslint/parser": "^8.33.1",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^5.4.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-storybook": "^9.0.5",
+    "eslint-webpack-plugin": "^5.0.1",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "sass": "^1.89.1",
+    "sass-loader": "^16.0.5",
+    "storybook": "^9.0.5",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typed-css-modules": "^0.9.1",
+    "typed-scss-modules": "^5.0.0",
+    "typescript": "^5.8.3",
+    "typescript-plugin-css-modules": "^5.1.0",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
+  },
+  "dependencies": {
+    "css-modules-typescript-loader": "^4.0.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "peerDependencies": {
+    "@types/react": "^18.0.28",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  }
+}

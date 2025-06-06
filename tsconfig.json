@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "target": "ES2020",
+    "lib": ["DOM", "DOM.Iterable", "ES2020"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "typeRoots": ["./node_modules/@types", "./src/types"]
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "noEmit": true
+    }
+  },
+  "include": ["src", "src/types"],
+  "exclude": ["node_modules", "build", ".storybook"]
+}
