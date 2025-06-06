@@ -22,6 +22,8 @@ const config: StorybookConfig = {
           options: {
             modules: {
               localIdentName: "[local]__[hash:base64:5]",
+              namedExport: false,
+              exportLocalsConvention: "as-is",
             },
           },
         },

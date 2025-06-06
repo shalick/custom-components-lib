@@ -1,5 +1,5 @@
-import path from "path";
 import webpack from "webpack";
+import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
@@ -13,7 +13,7 @@ interface EnvVariables {
 }
 
 export default (env: EnvVariables): webpack.Configuration => ({
-  mode: env.mode ?? "development",
+  mode: "development",
   entry: path.resolve(__dirname, "src", "index.tsx"),
   output: {
     path: path.resolve(__dirname, "build"),
@@ -45,6 +45,8 @@ export default (env: EnvVariables): webpack.Configuration => ({
             options: {
               modules: {
                 localIdentName: "[local]__[hash:base64:5]",
+                namedExport: false,
+                exportLocalsConvention: "as-is",
               },
               esModule: true,
             },
@@ -74,7 +76,7 @@ export default (env: EnvVariables): webpack.Configuration => ({
   },
   devtool: "inline-source-map",
   devServer: {
-    port: env.port ?? 3000,
+    port: 3000,
     open: true,
   },
 });

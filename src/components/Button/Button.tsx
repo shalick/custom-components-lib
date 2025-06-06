@@ -1,8 +1,8 @@
-import { ComponentProps } from "react";
+import { ComponentProps, FC } from "react";
 import classes from "./Button.module.scss";
 
 type ButtonProps = ComponentProps<"button">;
 
-export function Button({ ...props }: ButtonProps) {
+export const Button: FC<ButtonProps> = (props) => {
   return <button type="button" className={classes.button} {...props} />;
-}
+};
