@@ -45,5 +45,11 @@
         "project": null,
       },
     },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "react/require-default-props": "off",
+      },
+    },
   ],
 }

@@ -1,0 +1,39 @@
+@import "colors";
+
+$themes: (
+  primary: (
+    main: $color-primary-main,
+    contrast: $color-primary-contrast,
+    hover: $color-primary-hover,
+    disabled: $color-disabled,
+    border: $color-border,
+  ),
+  secondary: (
+    main: $color-secondary-main,
+    contrast: $color-secondary-contrast,
+    hover: $color-secondary-hover,
+    disabled: $color-disabled,
+    border: $color-border,
+  ),
+  custom: (
+    main: $color-custom-main,
+    contrast: $color-custom-contrast,
+    hover: $color-custom-hover,
+    disabled: $color-disabled,
+    border: $color-border,
+  ),
+  success: (
+    main: $color-success-main,
+    contrast: $color-success-contrast,
+    hover: $color-success-hover,
+    disabled: $color-disabled,
+    border: $color-border,
+  ),
+  error: (
+    main: $color-error-main,
+    contrast: $color-error-contrast,
+    hover: $color-error-hover,
+    disabled: $color-disabled,
+    border: $color-border,
+  ),
+);
