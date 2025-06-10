@@ -5,14 +5,14 @@ type Variant = "contained" | "outlined" | "text";
 type Theme = "primary" | "secondary" | "custom" | "success" | "error";
 type Size = "small" | "medium" | "large";
 
-type ButtonProps = {
+export interface ButtonProps {
   children?: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
   variant?: Variant;
   theme?: Theme;
   size?: Size;
-};
+}
 
 export function Button({
   children,
@@ -31,7 +31,7 @@ export function Button({
         classes.button,
         classes[`button--${variant}`],
         classes[`button--${theme}`],
-        classes[`button--${size}`],
+        classes[`button--${size}`]
       )}
     >
       {children}
