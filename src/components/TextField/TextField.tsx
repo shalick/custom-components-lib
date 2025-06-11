@@ -20,6 +20,9 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       helperText,
       disabled = false,
       id,
+      onFocus,
+      onBlur,
+      onChange,
     },
     ref,
   ) => {
@@ -30,16 +33,19 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 
     const hasValue = value != null && String(value).length > 0;
 
-    const handleFocus = () => {
+    const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
       setFocused(true);
+      onFocus?.(e);
     };
 
-    const handleBlur = () => {
+    const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
       if (!value) setFocused(false);
+      onBlur?.(e);
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       setValue(e.target.value);
+      onChange?.(e);
     };
 
     return (
