@@ -32,10 +32,6 @@
   padding: 0 4px;
 }
 
-.labelError {
-  color: $color-error-main;
-}
-
 .input {
   width: 100%;
   padding: 12px;
@@ -71,6 +67,23 @@
   border: none;
   border-bottom: 1px solid $color-border;
   border-radius: 0;
+}
+
+.focused .input {
+  border-color: $color-primary-main;
+  outline: none;
+}
+
+.focused .label {
+  color: $color-primary-main;
+}
+
+.error .label {
+  color: $color-error-main;
+}
+
+.labelError {
+  color: $color-error-main;
 }
 
 .error .input {

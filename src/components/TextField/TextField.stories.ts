@@ -4,6 +4,9 @@ import { TextField } from "./TextField.tsx";
 const meta: Meta<typeof TextField> = {
   title: "Components/TextField",
   component: TextField,
+  parameters: {
+    layout: "centered",
+  },
   tags: ["autodocs"],
   argTypes: {
     variant: {

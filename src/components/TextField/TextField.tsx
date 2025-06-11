@@ -6,7 +6,6 @@ export interface TextFieldProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   variant?: "outlined" | "filled" | "standard";
   label?: string;
-  placeholder?: string;
   error?: boolean;
   helperText?: string;
   disabled?: boolean;
@@ -17,7 +16,6 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     {
       variant = "outlined",
       label,
-      placeholder,
       error = false,
       helperText,
       disabled = false,
@@ -51,6 +49,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
           classes[variant],
           error && classes.error,
           disabled && classes.disabled,
+          focused && classes.focused,
         )}
       >
         <div className={classes.inputWrapper}>
@@ -60,7 +59,6 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
               classes.input,
               (focused || hasValue) && classes.notEmpty,
             )}
-            placeholder={focused ? placeholder : ""}
             disabled={disabled}
             aria-invalid={error}
             onFocus={handleFocus}
