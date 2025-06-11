@@ -31,7 +31,7 @@ export function Button({
         classes.button,
         classes[`button--${variant}`],
         classes[`button--${theme}`],
-        classes[`button--${size}`]
+        classes[`button--${size}`],
       )}
     >
       {children}
