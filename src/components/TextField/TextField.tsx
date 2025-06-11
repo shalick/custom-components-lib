@@ -23,6 +23,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       onFocus,
       onBlur,
       onChange,
+      ...rest
     },
     ref,
   ) => {
@@ -70,6 +71,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
             onFocus={handleFocus}
             onBlur={handleBlur}
             onChange={handleChange}
+            {...rest}
             value={value}
             ref={ref}
           />
