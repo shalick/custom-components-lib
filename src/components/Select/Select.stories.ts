@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { TextField } from "./TextField.tsx";
+import { Select } from "./Select.tsx";
 
-const meta: Meta<typeof TextField> = {
-  title: "Components/TextField",
-  component: TextField,
+const meta: Meta<typeof Select> = {
+  title: "Components/Select",
+  component: Select,
   parameters: {
     layout: "centered",
   },
@@ -13,45 +13,57 @@ const meta: Meta<typeof TextField> = {
       control: "radio",
       options: ["outlined", "filled", "standard"],
     },
-    error: { control: "boolean" },
     disabled: { control: "boolean" },
+    error: { control: "boolean" },
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof TextField>;
+
+type Story = StoryObj<typeof Select>;
+
+const options = [
+  { value: "apple", label: "Apple" },
+  { value: "banana", label: "Banana" },
+  { value: "orange", label: "Orange" },
+];
 
 export const Default: Story = {
   args: {
-    label: "Name",
+    label: "Fruit",
+    options,
   },
 };
 
 export const Error: Story = {
   args: {
-    label: "Email",
+    label: "Fruit",
     error: true,
-    helperText: "Invalid email address",
+    helperText: "Please select a fruit",
+    options,
   },
 };
 
 export const Filled: Story = {
   args: {
-    label: "Filled input",
+    label: "Fruit",
     variant: "filled",
+    options,
   },
 };
 
 export const Standard: Story = {
   args: {
-    label: "Standard input",
+    label: "Fruit",
     variant: "standard",
+    options,
   },
 };
 
 export const Disabled: Story = {
   args: {
-    label: "Disabled input",
+    label: "Fruit",
     disabled: true,
+    options,
   },
 };

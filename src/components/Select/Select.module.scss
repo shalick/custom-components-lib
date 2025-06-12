@@ -1,0 +1,158 @@
+@import "../../styles/colors.scss";
+@import "../../styles/variables.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.selectWrapper {
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.2s ease all;
+  color: #666;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.labelFloat {
+  top: -8px;
+  left: 8px;
+  font-size: 0.75rem;
+  background: white;
+  padding: 0 4px;
+}
+
+.labelError {
+  color: $color-error-main;
+}
+
+.select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid $color-border;
+  background-color: white;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+
+.selectedValue {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.medium .select {
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.small .select {
+  padding: 8px 10px;
+  font-size: 0.875rem;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid $color-border;
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.option {
+  padding: 10px 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-primary-hover;
+    color: $color-primary-contrast;
+  }
+}
+
+.selected {
+  font-weight: bold;
+  background-color: rgba($color-primary-main, 0.08);
+}
+
+.arrow {
+  margin-left: 8px;
+}
+
+.helperText {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+.helperTextError {
+  color: $color-error-main;
+}
+
+.outlined .select {
+  border: 1px solid $color-border;
+}
+
+.filled .select {
+  background-color: #f5f5f5;
+  border: none;
+  border-bottom: 1px solid $color-border;
+}
+
+.standard .select {
+  border: none;
+  border-bottom: 1px solid $color-border;
+  border-radius: 0;
+}
+
+.error .select {
+  border-color: $color-error-main;
+}
+
+.disabled .select {
+  background-color: $color-disabled;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.small {
+  min-width: 140px;
+  max-width: 160px;
+}
+
+.medium {
+  min-width: 200px;
+  max-width: 240px;
+}
+
+.open .select {
+  border-color: $color-primary-main;
+}
+
+.open .label {
+  color: $color-primary-main;
+}
