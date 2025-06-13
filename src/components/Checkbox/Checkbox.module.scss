@@ -1,0 +1,77 @@
+@import "../../styles/colors.scss";
+@import "../../styles/variables.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family;
+  margin: 1rem 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.input {
+  display: none;
+}
+
+.box {
+  width: 20px;
+  height: 20px;
+  border: 2px solid $color-border;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid $color-primary-main;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+}
+
+.input:checked + .box {
+  border-color: $color-primary-main;
+  background-color: $color-primary-main;
+
+  &::after {
+    opacity: 1;
+    border-color: white;
+  }
+}
+
+.labelText {
+  font-size: 1rem;
+  user-select: none;
+}
+
+.disabled .container {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.error .box {
+  border-color: $color-error-main;
+}
+
+.helperText {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+.helperTextError {
+  color: $color-error-main;
+}
