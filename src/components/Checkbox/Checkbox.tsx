@@ -1,4 +1,4 @@
-import { LabelHTMLAttributes, useId, useState, useEffect } from "react";
+import { LabelHTMLAttributes, useId, useState } from "react";
 import clsx from "clsx";
 import classes from "./Checkbox.module.scss";
 
@@ -25,13 +25,11 @@ export function Checkbox({
   const id = useId();
   const [checked, setChecked] = useState(defaultChecked);
 
-  useEffect(() => {
-    onChange?.(checked);
-  }, [checked, onChange]);
-
   const handleToggle = () => {
     if (disabled) return;
-    setChecked((prev) => !prev);
+    const newChecked = !checked;
+    setChecked(newChecked);
+    onChange?.(newChecked);
   };
 
   return (
