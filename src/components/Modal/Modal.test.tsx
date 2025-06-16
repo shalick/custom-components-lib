@@ -56,7 +56,7 @@ describe("Modal", () => {
       </Modal>,
     );
 
-    const backdrop = screen.getAllByRole("button")[0]; 
+    const backdrop = screen.getAllByRole("button")[0];
     fireEvent.click(backdrop);
     expect(onClose).toHaveBeenCalledTimes(1);
   });
@@ -80,7 +80,7 @@ describe("Modal", () => {
       </Modal>,
     );
 
-    const modal = screen.getAllByRole("button")[1]; 
+    const modal = screen.getAllByRole("button")[1];
     fireEvent.click(modal);
     expect(onClose).not.toHaveBeenCalled();
   });
