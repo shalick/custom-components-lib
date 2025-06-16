@@ -1,0 +1,64 @@
+@import "../../styles/variables";
+@import "../../styles/colors";
+.backdrop {
+  all: unset;
+  inset: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: scaleIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.button {
+  background: none;
+  border: none;
+  color: $color-primary-main;
+  font-family: $font-family;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-weight: $font-weight-medium;
+  transition: background 0.2s;
+
+  &:hover {
+    background: rgba(25, 118, 210, 0.1);
+  }
+}
