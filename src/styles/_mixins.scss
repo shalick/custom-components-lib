@@ -1,0 +1,50 @@
+@mixin generate-button-themes {
+  @each $theme-name, $colors in $themes {
+    &--#{$theme-name} {
+      &.button--contained {
+        background-color: map-get($colors, main);
+        color: map-get($colors, contrast);
+
+        &:hover {
+          background-color: map-get($colors, hover);
+        }
+
+        &:disabled {
+          background-color: map-get($colors, border);
+          color: map-get($colors, disabled);
+          cursor: not-allowed;
+        }
+      }
+
+      &.button--outlined {
+        background-color: transparent;
+        border: 1px solid map-get($colors, main);
+        color: map-get($colors, main);
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.04);
+        }
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+
+      &.button--text {
+        background-color: transparent;
+        border: none;
+        color: map-get($colors, main);
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.04);
+        }
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
