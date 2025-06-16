@@ -30,8 +30,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     const generatedId = useId();
     const inputId = id || generatedId;
     const [focused, setFocused] = useState(false);
-    const [value, setValue] = useState("");
-
+    const [value, setValue] = useState(rest.defaultValue ?? "");
     const hasValue = value != null && String(value).length > 0;
 
     const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
