@@ -21,17 +21,18 @@ export function Modal({
   closeOnEsc = true,
   closeOnBackdropClick = true,
 }: ModalProps) {
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === "Escape" && closeOnEsc) {
-      onClose();
-    }
-  };
-
   useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && closeOnEsc) {
+        onClose();
+      }
+    };
+
     if (open) {
       document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleKeyDown);
     }
+
     return () => {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
@@ -41,25 +42,29 @@ export function Modal({
   if (!open) return null;
 
   return (
-    <button
-      type="button"
-      className={clsx(classes.backdrop, backdropClassName)}
-      onClick={() => closeOnBackdropClick && onClose()}
-      onKeyDown={(e) => {
-        if ((e.key === "Enter" || e.key === " ") && closeOnBackdropClick) {
-          e.preventDefault();
-          onClose();
-        }
-      }}
-      tabIndex={-1}
-    >
-      <button
-        type="button"
+    <div className={clsx(classes.backdropWrapper)}>
+      <div
+        role="button"
+        tabIndex={0}
+        aria-label="Backdrop"
+        className={clsx(classes.backdrop, backdropClassName)}
+        /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */
+        onClick={() => closeOnBackdropClick && onClose()}
+        onKeyDown={(e) => {
+          if ((e.key === "Enter" || e.key === " ") && closeOnBackdropClick) {
+            e.preventDefault();
+            onClose();
+          }
+        }}
+      />
+      <div
+        role="dialog"
+        aria-modal="true"
         className={clsx(classes.modal, className)}
         onClick={(e) => e.stopPropagation()}
       >
         {children}
-      </button>
-    </button>
+      </div>
+    </div>
   );
 }
