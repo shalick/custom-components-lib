@@ -12,7 +12,7 @@
     "ecmaFeatures": {
       "jsx": true,
     },
-    "project": "./tsconfig.json",
+    "project": "./tsconfig.eslint.json",
     "tsconfigRootDir": ".",
     "sourceType": "module",
   },
@@ -49,6 +49,24 @@
       "files": ["*.ts", "*.tsx"],
       "rules": {
         "react/require-default-props": "off",
+      },
+    },
+    {
+      "files": [
+        "**/*.test.{js,ts,jsx,tsx}",
+        "**/__tests__/**/*.{js,ts,jsx,tsx}",
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          { "devDependencies": true },
+        ],
+      },
+    },
+    {
+      "files": ["*.config.ts", "jest.config.ts", "jest.setup.ts"],
+      "parserOptions": {
+        "project": null,
       },
     },
   ],
