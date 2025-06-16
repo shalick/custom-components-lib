@@ -25,6 +25,7 @@ describe("Modal", () => {
       </Modal>,
     );
     expect(screen.getByText(modalText)).toBeInTheDocument();
+    expect(screen.getByRole("dialog")).toBeInTheDocument();
   });
 
   it("calls onClose when Escape key is pressed", () => {
@@ -56,7 +57,7 @@ describe("Modal", () => {
       </Modal>,
     );
 
-    const backdrop = screen.getAllByRole("button")[0]; 
+    const backdrop = screen.getByRole("button", { name: "Backdrop" });
     fireEvent.click(backdrop);
     expect(onClose).toHaveBeenCalledTimes(1);
   });
@@ -68,7 +69,7 @@ describe("Modal", () => {
       </Modal>,
     );
 
-    const backdrop = screen.getAllByRole("button")[0];
+    const backdrop = screen.getByRole("button", { name: "Backdrop" });
     fireEvent.click(backdrop);
     expect(onClose).not.toHaveBeenCalled();
   });
@@ -80,8 +81,8 @@ describe("Modal", () => {
       </Modal>,
     );
 
-    const modal = screen.getAllByRole("button")[1]; 
-    fireEvent.click(modal);
+    const modalContent = screen.getByRole("dialog");
+    fireEvent.click(modalContent);
     expect(onClose).not.toHaveBeenCalled();
   });
 
@@ -92,7 +93,7 @@ describe("Modal", () => {
       </Modal>,
     );
 
-    const backdrop = screen.getAllByRole("button")[0];
+    const backdrop = screen.getByRole("button", { name: "Backdrop" });
     fireEvent.keyDown(backdrop, { key: "Enter" });
     expect(onClose).toHaveBeenCalledTimes(1);
   });
@@ -104,7 +105,7 @@ describe("Modal", () => {
       </Modal>,
     );
 
-    const backdrop = screen.getAllByRole("button")[0];
+    const backdrop = screen.getByRole("button", { name: "Backdrop" });
     fireEvent.keyDown(backdrop, { key: " " });
     expect(onClose).toHaveBeenCalledTimes(1);
   });
